@@ -41,6 +41,9 @@ nosetests.xml
 # Virtual environment
 venv
 
+# PyCharm
+.idea
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
