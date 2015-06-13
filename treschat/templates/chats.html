@@ -1,0 +1,20 @@
+{% extends "proto.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Chats you want to poTresChat!{% endblock %}
+
+{% block page_content %}
+{% for chat in chats %}
+<div class="jumbotron" style="margin:0px; background-color:#BDD8DA">
+	<h2>"{{chat.chatname}}"</h2>
+	{# if current_user in chat.chat_partisipants #}
+        <a href="{{ url_for('.show_chat', id=chat.id) }}">
+        <span class="label label-primary">Join</span>
+        </a>
+    {# endif #}
+</div>
+{% endfor %}
+<div>
+    {{ wtf.quick_form(form) }}
+</div>
+{% endblock %}

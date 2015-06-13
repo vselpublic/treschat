@@ -1,0 +1,17 @@
+{% extends "proto.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Chats you want to poTresChat!{% endblock %}
+{% block page_content %}
+<div>
+    {{ wtf.quick_form(leavechatform) }}
+</div>
+{% for message in messages %}
+    <div class="jumbotron" style="margin:0px; background-color:#BDD8DA">
+        <h2>"{{message.text}} {{message.userid}} {{message.timestamp}}"</h2>
+    </div>
+{% endfor %}
+    <div>
+        {{ wtf.quick_form(form) }}
+    </div>
+{% endblock %}
